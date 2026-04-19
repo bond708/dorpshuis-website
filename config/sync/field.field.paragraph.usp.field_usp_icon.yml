@@ -1,19 +1,38 @@
-uuid: fa350433-f6a8-4327-bad8-ea930dd176d3
-langcode: en
+uuid: fcf06dce-d516-4578-9344-e43536f63275
+langcode: nl
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_usp_icon
     - paragraphs.paragraphs_type.usp
+  module:
+    - image
 id: paragraph.usp.field_usp_icon
 field_name: field_usp_icon
 entity_type: paragraph
 bundle: usp
-label: 'Icoon (emoji of tekst)'
-description: ''
+label: 'Icoon (SVG)'
+description: 'Upload een SVG-icoon dat bij dit voordeel hoort. Gebruik een eenvoudig, enkelvoudig icoon op transparante achtergrond. Aanbevolen formaat: 24×24 px of 48×48 px viewBox. Het icoon wordt wit weergegeven op de donkere achtergrond.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: svg
+  max_filesize: '512 KB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

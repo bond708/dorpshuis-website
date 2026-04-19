@@ -1,0 +1,23 @@
+{# @file paragraph--usp.html.twig #}
+<div{{ attributes.addClass('usp flex flex-col items-center text-center gap-4') }}>
+
+  {% if content.field_usp_icon|render|striptags|trim %}
+  <div class="usp__icon w-12 h-12 text-accent-400 [&_svg]:w-full [&_svg]:h-full [&_svg]:fill-current"
+       aria-hidden="true">
+    {{ content.field_usp_icon }}
+  </div>
+  {% endif %}
+
+  {% if content.field_usp_title|render|striptags|trim %}
+  <h3 class="usp__title font-bold text-lg text-white leading-snug">
+    {{ content.field_usp_title }}
+  </h3>
+  {% endif %}
+
+  {% if content.field_usp_text|render|striptags|trim %}
+  <p class="usp__text text-white/70 text-sm leading-relaxed">
+    {{ content.field_usp_text }}
+  </p>
+  {% endif %}
+
+</div>

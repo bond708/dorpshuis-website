@@ -1,0 +1,26 @@
+uuid: d7d5ba4e-d7eb-4025-9d07-178753aecb34
+langcode: nl
+status: true
+dependencies:
+  config:
+    - webform.webform.contact
+  module:
+    - webform
+  theme:
+    - dorpshuis
+id: webform_contact_footer
+theme: dorpshuis
+region: footer_second
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Contactformulier
+  label_display: visible
+  provider: webform
+  webform_id: contact
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility: {  }

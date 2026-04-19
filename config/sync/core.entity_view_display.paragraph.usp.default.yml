@@ -7,16 +7,25 @@ dependencies:
     - field.field.paragraph.usp.field_usp_text
     - field.field.paragraph.usp.field_usp_title
     - paragraphs.paragraphs_type.usp
+  module:
+    - svg_image
 id: paragraph.usp.default
 targetEntityType: paragraph
 bundle: usp
 mode: default
 content:
   field_usp_icon:
-    type: string
+    type: image
     label: hidden
     settings:
-      link_to_entity: false
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
     third_party_settings: {  }
     weight: 0
     region: content

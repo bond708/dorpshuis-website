@@ -6,19 +6,22 @@ dependencies:
     - field.field.paragraph.usp.field_usp_icon
     - field.field.paragraph.usp.field_usp_text
     - field.field.paragraph.usp.field_usp_title
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.usp
+  module:
+    - svg_image
 id: paragraph.usp.default
 targetEntityType: paragraph
 bundle: usp
 mode: default
 content:
   field_usp_icon:
-    type: string_textfield
+    type: image_image
     weight: 0
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_usp_text:
     type: string_textarea
