@@ -1,0 +1,111 @@
+{#
+  @file page--front.html.twig
+  Homepage template — regio's ingesteld via Drupal admin > Structuur > Blokken
+#}
+<div class="layout-container flex flex-col min-h-screen">
+
+  {# ── Header ─────────────────────────────────────────────────────────────── #}
+  {% include '@dorpshuis/organisms/header/header.twig' with {
+    site_name:           site_name,
+    logo_path:           logo_path,
+    primary_navigation:  page.primary_menu,
+    secondary_navigation: page.secondary_menu,
+  } %}
+
+  {% if page.highlighted %}
+  <div class="bg-secondary-50 border-b border-secondary-200">
+    <div class="max-w-content mx-auto px-6 py-3">{{ page.highlighted }}</div>
+  </div>
+  {% endif %}
+
+  <main id="main-content" class="flex-1">
+
+    {# ── Hero (split: tekst links / foto rechts) ─────────────────────────── #}
+    {#
+      Plaats in /admin/structure/block een "Aangepast blok" in regio
+      "Homepage: Hero" met titel + ondertitel + knoppen.
+      Of gebruik het gewone content-blok als je de hero als node beheert.
+    #}
+    {% if page.hp_hero %}
+      {% include '@dorpshuis/organisms/hero/hero.twig' with {
+        content: page.hp_hero,
+      } %}
+    {% else %}
+      {# Fallback: standaard hero zonder Drupal-blok #}
+      {% include '@dorpshuis/organisms/hero/hero.twig' with {
+        title:         site_name,
+        subtitle:      site_slogan,
+        cta_primary:   { label: 'Bekijk onze zalen'|t,   url: '/zalen' },
+        cta_secondary: { label: 'Direct reserveren'|t, url: '/contact' },
+      } %}
+    {% endif %}
+
+    {# ── USP-balk ────────────────────────────────────────────────────────── #}
+    {#
+      Drupal admin: plaats een "Blokkenlijst" of "Aangepaste blok" in
+      regio "Homepage: USPs".
+      Tip: gebruik de module "Basic Block" of een View met 3 items.
+    #}
+    {% if page.hp_usps %}
+      {% include '@dorpshuis/organisms/usp-bar/usp-bar.twig' with {
+        title:   'Waarom Borgercompagnie?'|t,
+        content: page.hp_usps,
+      } %}
+    {% endif %}
+
+    {# ── Zalenoverzicht (donkere sectie) ─────────────────────────────────── #}
+    {#
+      Drupal admin: maak een View "Zalen" (content type: Zaal) en
+      plaats die in regio "Homepage: Zalen".
+    #}
+    {% if page.hp_rooms %}
+      {% include '@dorpshuis/organisms/rooms/rooms.twig' with {
+        title:   'Zalenoverzicht'|t,
+        content: page.hp_rooms,
+      } %}
+    {% endif %}
+
+    {# ── Referenties ─────────────────────────────────────────────────────── #}
+    {#
+      Drupal admin: View "Referenties" (content type: Testimonial) →
+      regio "Homepage: Referenties".
+    #}
+    {% if page.hp_testimonials %}
+      {% include '@dorpshuis/organisms/testimonials/testimonials.twig' with {
+        title:   'Referenties'|t,
+        content: page.hp_testimonials,
+      } %}
+    {% endif %}
+
+    {# ── Agenda Actueel + Laatste Nieuws ─────────────────────────────────── #}
+    {#
+      Drupal admin:
+        - View "Agenda" (Event) → regio "Homepage: Agenda"
+        - View "Nieuws"  (Article) → regio "Homepage: Nieuws"
+    #}
+    {% if page.hp_agenda or page.hp_news %}
+      {% include '@dorpshuis/organisms/agenda-news/agenda-news.twig' with {
+        agenda: page.hp_agenda,
+        news:   page.hp_news,
+      } %}
+    {% endif %}
+
+    {# ── Overige content (standaard Drupal-blokken) ──────────────────────── #}
+    {% if page.content %}
+    <div class="max-w-content mx-auto px-6 py-8">
+      {{ page.content }}
+    </div>
+    {% endif %}
+
+  </main>
+
+  {# ── Footer ──────────────────────────────────────────────────────────────── #}
+  {% include '@dorpshuis/organisms/footer/footer.twig' with {
+    site_name:    site_name,
+    footer_first:  page.footer_first,
+    footer_second: page.footer_second,
+    footer_third:  page.footer_third,
+    footer_bottom: page.footer_bottom,
+  } %}
+
+</div>

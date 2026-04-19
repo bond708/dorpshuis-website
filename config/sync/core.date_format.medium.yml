@@ -1,0 +1,10 @@
+uuid: 51bcd451-3257-425a-af8a-00a6ee3e0fba
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: q7pDV2d9qFh1IVqvymOxUUYGSziZDeg961wURC0cSLs
+id: medium
+label: 'Standaarddatum - middel'
+locked: false
+pattern: 'D, j M Y - H:i'

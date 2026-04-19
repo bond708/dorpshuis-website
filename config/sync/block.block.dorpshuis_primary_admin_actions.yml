@@ -1,0 +1,20 @@
+uuid: bbfb8d4d-d6f1-4259-98ac-98b41ce5251b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dorpshuis
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: dorpshuis_primary_admin_actions
+theme: dorpshuis
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

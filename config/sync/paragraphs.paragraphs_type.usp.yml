@@ -1,0 +1,10 @@
+uuid: 0ed14087-c804-4336-8eb1-e7a4f5704361
+langcode: en
+status: true
+dependencies: {  }
+id: usp
+label: USP
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

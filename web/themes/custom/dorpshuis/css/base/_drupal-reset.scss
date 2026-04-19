@@ -1,0 +1,159 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Drupal-specifieke overrides.
+
+/* Messages */
+.messages {
+  padding: 1rem 1.25rem;
+  border-radius: $radius;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+
+  &--status  { background: #f0fdf4; border-color: #86efac; color: #166534; }
+  &--warning { background: #fffbeb; border-color: #fcd34d; color: #92400e; }
+  &--error   { background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
+}
+
+/* Tabs */
+.tabs {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid $color-border;
+}
+
+/* Pager */
+.pager__item {
+  display: inline-block;
+
+  a { @include focus-ring; }
+}
+
+/* Field labels */
+.field__label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 0.875rem;
+  color: $color-text-muted;
+
+  ol { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; list-style: none; margin: 0; padding: 0; }
+  li + li::before { content: '/'; margin-right: 0.5rem; color: $color-border; }
+  a { color: $color-text-muted; text-decoration: none; &:hover { color: $color-accent; } }
+}
+
+/* Footer blocks */
+.o-footer {
+  h2, h3 {
+    color: $color-accent;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: rgb(255 255 255 / 80%);
+    text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover { color: #fff; }
+  }
+
+  p { margin-bottom: 0.5rem; color: rgb(255 255 255 / 80%); }
+}
+
+/* Webform + formulieren in footer (donkere achtergrond) */
+.o-footer__form {
+  h2, h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  // Webform grid: 2 kolommen voor naam + email
+  .webform-element--type-textfield,
+  .webform-element--type-email {
+    .form-item { margin-bottom: 0.75rem; }
+  }
+
+  .js-form-type-textfield,
+  .js-form-type-email,
+  .js-form-type-date,
+  .js-form-type-select,
+  .js-form-type-textarea {
+    margin-bottom: 0.75rem;
+  }
+
+  // Labels verbergen (placeholders zijn voldoende in dit ontwerp)
+  // WCAG: labels blijven beschikbaar voor screenreaders via .visually-hidden
+  label {
+    @include visually-hidden;
+  }
+
+  .form-text,
+  .form-email,
+  .form-date,
+  .form-textarea,
+  .form-select {
+    display: block;
+    width: 100%;
+    background: rgb(255 255 255 / 8%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: $radius;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    transition: border-color $transition-base;
+
+    &::placeholder { color: rgb(255 255 255 / 45%); }
+
+    &:focus {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
+      border-color: $color-accent;
+    }
+
+    option { color: $color-text; background: #fff; }
+  }
+
+  // Twee kolommen: naam | email
+  .webform-flexbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+
+    @media (max-width: #{$breakpoint-sm - 1}) { grid-template-columns: 1fr; }
+  }
+
+  .form-actions,
+  .webform-button--submit {
+    margin-top: 0.25rem;
+  }
+
+  .form-submit,
+  .webform-button--submit,
+  [type='submit'] {
+    display: block;
+    width: 100%;
+    background-color: $color-accent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.875rem 1rem;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: background-color $transition-base;
+    letter-spacing: 0.03em;
+
+    &:hover { background-color: $color-accent-dark; }
+    &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  }
+}

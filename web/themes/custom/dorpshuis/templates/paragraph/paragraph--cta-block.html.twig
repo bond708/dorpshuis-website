@@ -1,0 +1,16 @@
+{# @file paragraph--cta-block.html.twig #}
+<section{{ attributes.addClass('paragraph', 'paragraph--cta-block', 'py-14', 'bg-neutral-50') }}>
+  <div class="max-w-content mx-auto px-6">
+
+    {% if content.field_cta_block_title|render|striptags|trim %}
+    <h2 class="text-center font-bold uppercase tracking-widest text-2xl mb-10">
+      {{ content.field_cta_block_title }}
+    </h2>
+    {% endif %}
+
+    <div class="grid sm:grid-cols-3 gap-8">
+      {{ content.field_cta_items }}
+    </div>
+
+  </div>
+</section>

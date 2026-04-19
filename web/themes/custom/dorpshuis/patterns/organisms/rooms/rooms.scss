@@ -1,0 +1,25 @@
+@use '../../../css/abstracts/variables' as *;
+
+// Zalen cards op donkere achtergrond
+.o-rooms {
+  // Views grid override: zorg voor 3 kolommen
+  .views-row,
+  .view-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  // Card kleurcorrectie voor donkere achtergrond
+  .m-card {
+    background: rgb(255 255 255 / 8%);
+    color: #fff;
+    border: 1px solid rgb(255 255 255 / 12%);
+
+    &:hover { background: rgb(255 255 255 / 12%); }
+  }
+
+  .m-card__title a { color: #fff; &:hover { color: $color-accent; } }
+  .m-card__teaser  { color: rgb(255 255 255 / 70%); }
+  .m-card__meta    { color: rgb(255 255 255 / 50%); }
+}

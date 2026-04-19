@@ -1,0 +1,19 @@
+uuid: 3272a95a-d840-469d-be5e-8b412c1027f6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_block_title
+    - paragraphs.paragraphs_type.cta_block
+id: paragraph.cta_block.field_cta_block_title
+field_name: field_cta_block_title
+entity_type: paragraph
+bundle: cta_block
+label: 'Sectietitel (optioneel)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

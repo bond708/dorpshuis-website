@@ -1,0 +1,36 @@
+@use '../../../css/abstracts/variables' as *;
+
+.m-card {
+  position: relative;
+
+  &--featured {
+    border-left: 4px solid $color-accent;
+  }
+
+  &--horizontal {
+    @media (min-width: $breakpoint-sm) {
+      flex-direction: row;
+
+      .m-card__media {
+        width: 40%;
+        flex-shrink: 0;
+        height: auto;
+      }
+    }
+  }
+
+  &__title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color $transition-base;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    &:hover { color: $color-accent; }
+  }
+}

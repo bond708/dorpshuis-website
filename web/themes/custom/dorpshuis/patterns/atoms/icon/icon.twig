@@ -1,0 +1,18 @@
+{#
+  Atom: Icon (SVG sprite)
+  Variables:
+    - name (string, required): icon ID from sprite
+    - size (string): xs | sm | md | lg (default: md)
+    - label (string, optional): aria-label for standalone icons
+    - decorative (bool): when true, aria-hidden is set (default: false if label set, true otherwise)
+#}
+{% set size_map = { xs: 'w-3 h-3', sm: 'w-4 h-4', md: 'w-5 h-5', lg: 'w-6 h-6', xl: 'w-8 h-8' } %}
+{% set size_class = size_map[size|default('md')] %}
+{% set is_decorative = decorative is defined ? decorative : (label is not defined or label is empty) %}
+
+<svg
+  class="icon icon--{{ name }} {{ size_class }} inline-block flex-shrink-0"
+  {% if is_decorative %}aria-hidden="true" focusable="false"{% else %}role="img" aria-label="{{ label }}"{% endif %}
+>
+  <use href="{{ base_path ~ directory }}/images/sprite.svg#{{ name }}"></use>
+</svg>

@@ -1,0 +1,23 @@
+uuid: 95b8d6aa-6f8f-4103-82b8-bf4fb42ce82b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zaal_capacity
+    - node.type.zaal
+id: node.zaal.field_zaal_capacity
+field_name: field_zaal_capacity
+entity_type: node
+bundle: zaal
+label: 'Max. personen'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

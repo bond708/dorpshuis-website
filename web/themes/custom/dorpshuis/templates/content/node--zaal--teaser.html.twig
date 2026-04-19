@@ -1,0 +1,40 @@
+{# @file node--zaal--teaser.html.twig #}
+<article{{ attributes.addClass('node', 'node--zaal', 'node--teaser',
+  'group flex flex-col rounded-lg overflow-hidden',
+  'bg-white/8 border border-white/12 hover:bg-white/12 transition-colors') }}>
+
+  {% if content.field_zaal_image %}
+  <div class="overflow-hidden h-48">
+    <a href="{{ url }}" tabindex="-1" aria-hidden="true" class="block h-full">
+      {{ content.field_zaal_image }}
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="flex flex-col flex-1 p-6 gap-3">
+
+    <h3 class="font-bold text-xl text-white">
+      <a href="{{ url }}" class="no-underline hover:text-accent-400 after:absolute after:inset-0">
+        {{ label }}
+      </a>
+    </h3>
+
+    {% if content.field_zaal_teaser|render|striptags|trim %}
+    <p class="text-white/70 text-sm leading-relaxed">
+      {{ content.field_zaal_teaser }}
+    </p>
+    {% endif %}
+
+    {% if content.field_zaal_capacity|render|striptags|trim %}
+    <p class="text-white/50 text-xs mt-auto">
+      {{ 'Max.'|t }} {{ content.field_zaal_capacity }} {{ 'personen'|t }}
+    </p>
+    {% endif %}
+
+    <a href="{{ url }}"
+       class="relative z-10 inline-block mt-2 px-4 py-2 text-sm font-bold border border-accent-400 text-accent-400 rounded hover:bg-accent-400 hover:text-white transition-colors no-underline self-start">
+      {{ 'Meer info'|t }}
+    </a>
+
+  </div>
+</article>

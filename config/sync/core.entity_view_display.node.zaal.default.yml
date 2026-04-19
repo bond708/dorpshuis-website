@@ -1,0 +1,35 @@
+uuid: d9d29203-5040-4ab0-9daa-51486cc4490e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.zaal.body
+    - field.field.node.zaal.field_zaal_capacity
+    - field.field.node.zaal.field_zaal_image
+    - field.field.node.zaal.field_zaal_teaser
+    - node.type.zaal
+  module:
+    - text
+    - user
+id: node.zaal.default
+targetEntityType: node
+bundle: zaal
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_zaal_capacity: true
+  field_zaal_image: true
+  field_zaal_teaser: true
+  langcode: true

@@ -1,0 +1,19 @@
+uuid: 36d52e84-08d1-462d-b155-3fce2344d646
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_company
+    - paragraphs.paragraphs_type.testimonial
+id: paragraph.testimonial.field_company
+field_name: field_company
+entity_type: paragraph
+bundle: testimonial
+label: 'Bedrijf / Plaats'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

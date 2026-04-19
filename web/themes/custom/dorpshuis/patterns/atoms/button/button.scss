@@ -1,0 +1,50 @@
+@use '../../../css/abstracts/variables' as *;
+
+.btn {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  border-radius: $radius;
+  transition: background-color $transition-base, color $transition-base, border-color $transition-base;
+
+  &--primary {
+    background-color: $color-accent;
+    color: #fff;
+
+    &:hover:not(:disabled) { background-color: $color-accent-dark; }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $color-accent;
+    border: 2px solid $color-accent;
+
+    &:hover:not(:disabled) { background-color: $color-accent; color: #fff; }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $color-accent;
+
+    &:hover:not(:disabled) { background-color: rgb(212 160 23 / 10%); }
+  }
+
+  &--dark {
+    background-color: $color-primary;
+    color: #fff;
+
+    &:hover:not(:disabled) { background-color: $color-primary-dark; }
+  }
+
+  &--danger {
+    background-color: #dc2626;
+    color: #fff;
+
+    &:hover:not(:disabled) { background-color: #b91c1c; }
+  }
+}

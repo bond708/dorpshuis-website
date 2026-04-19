@@ -1,0 +1,10 @@
+uuid: aa187183-8300-456a-9ed7-ab5ee6cd07d3
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SAeixlV7Djy_Ggv_1P95TiqD4KUihA5icvU521tA84Y
+id: short
+label: 'Standaarddatum - kort'
+locked: false
+pattern: 'j M Y - H:i'

@@ -1,0 +1,24 @@
+uuid: 9712b010-1b03-4e22-ae7b-ce70ed83ae2c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.zaal
+  module:
+    - text
+id: node.zaal.body
+field_name: body
+entity_type: node
+bundle: zaal
+label: Omschrijving
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

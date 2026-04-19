@@ -1,0 +1,11 @@
+uuid: eadbb51c-d6f5-4483-a7dd-dd3e5b2e41a7
+langcode: nl
+status: true
+dependencies: {  }
+name: Zaal
+type: zaal
+description: 'Een verhuurbare ruimte of zaal.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

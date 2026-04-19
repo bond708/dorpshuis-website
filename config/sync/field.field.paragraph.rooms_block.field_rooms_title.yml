@@ -1,0 +1,19 @@
+uuid: 911eac5c-7aa1-4739-b6cd-fc0766c12b54
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rooms_title
+    - paragraphs.paragraphs_type.rooms_block
+id: paragraph.rooms_block.field_rooms_title
+field_name: field_rooms_title
+entity_type: paragraph
+bundle: rooms_block
+label: 'Sectietitel (optioneel)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

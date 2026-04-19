@@ -1,0 +1,11 @@
+uuid: 881c80c4-881d-4bf3-885d-86a7dd6edfb4
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 35CefWbnzaiytcg3acexxz_GTvuwIjYd_ZTcmmR-tXA
+id: zxx
+label: 'Niet van toepassing'
+direction: ltr
+weight: 12
+locked: true

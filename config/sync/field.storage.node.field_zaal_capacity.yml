@@ -1,0 +1,20 @@
+uuid: 565b754a-edb1-4ee6-87f2-d0563b26476d
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_zaal_capacity
+field_name: field_zaal_capacity
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

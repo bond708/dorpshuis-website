@@ -1,0 +1,8 @@
+uuid: e13d40e3-71f1-46f8-b79c-8c0f2b5f8f25
+langcode: en
+status: true
+dependencies: {  }
+id: usps
+label: 'Homepage USPs'
+revision: false
+description: 'Blok met USP-items (paragraph)'

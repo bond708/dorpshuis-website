@@ -1,0 +1,22 @@
+// Dorpshuis – main SCSS entry point
+// Tailwind utilities: layout/spacing. SCSS: states, varianten, Drupal-overrides.
+
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'base/drupal-reset';
+
+// Atoms
+@use '../patterns/atoms/button/button';
+@use '../patterns/atoms/form-element/form-element';
+
+// Molecules
+@use '../patterns/molecules/card/card';
+
+// Organisms
+@use '../patterns/organisms/header/header';
+@use '../patterns/organisms/navigation/navigation';
+@use '../patterns/organisms/hero/hero';
+@use '../patterns/organisms/usp-bar/usp-bar';
+@use '../patterns/organisms/rooms/rooms';
+@use '../patterns/organisms/testimonials/testimonials';
+@use '../patterns/organisms/agenda-news/agenda-news';

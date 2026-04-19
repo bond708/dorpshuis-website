@@ -1,0 +1,22 @@
+uuid: 55f688c5-801a-489a-ba0e-7e421f62efcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dorpshuis
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: dorpshuis_powered
+theme: dorpshuis
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

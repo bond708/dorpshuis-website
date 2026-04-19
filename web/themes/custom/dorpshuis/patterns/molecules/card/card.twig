@@ -1,0 +1,55 @@
+{#
+  Molecule: Card
+  Variables:
+    - title (string, required)
+    - url (string, optional)
+    - image (render array or string, optional)
+    - image_alt (string)
+    - teaser (string, optional)
+    - meta (string, optional)
+    - tags (array of {label, url}, optional)
+    - variant (string): default | featured | horizontal (default: default)
+    - cta_label (string, optional)
+#}
+{% set variant = variant|default('default') %}
+
+<article class="m-card m-card--{{ variant }} group flex flex-col bg-white rounded-lg overflow-hidden shadow-card hover:shadow-card-lg transition-shadow duration-300">
+
+  {% if image %}
+  <div class="m-card__media overflow-hidden h-48">
+    {% if url %}<a href="{{ url }}" tabindex="-1" aria-hidden="true" class="block h-full">{% endif %}
+      {% if image is iterable %}
+        {{ image }}
+      {% else %}
+        <img src="{{ image }}" alt="{{ image_alt|default('') }}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+      {% endif %}
+    {% if url %}</a>{% endif %}
+  </div>
+  {% endif %}
+
+  <div class="m-card__body flex flex-col flex-1 p-6 gap-3">
+
+    {% if meta %}
+    <p class="m-card__meta text-xs font-medium uppercase tracking-wider text-neutral-500">{{ meta }}</p>
+    {% endif %}
+
+    <h3 class="m-card__title font-bold text-xl text-neutral-900">
+      {% if url %}
+        <a href="{{ url }}" class="no-underline hover:text-accent after:absolute after:inset-0">{{ title }}</a>
+      {% else %}
+        {{ title }}
+      {% endif %}
+    </h3>
+
+    {% if teaser %}
+    <p class="m-card__teaser text-neutral-600 text-sm leading-relaxed">{{ teaser }}</p>
+    {% endif %}
+
+    {% if cta_label and url %}
+    <div class="mt-auto pt-2">
+      <span class="text-accent font-bold text-sm hover:underline cursor-pointer">{{ cta_label }} &rarr;</span>
+    </div>
+    {% endif %}
+
+  </div>
+</article>

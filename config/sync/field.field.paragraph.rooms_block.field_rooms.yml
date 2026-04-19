@@ -1,0 +1,27 @@
+uuid: 088e2fe8-e267-4955-9834-90d8ee16637d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rooms
+    - node.type.zaal
+    - paragraphs.paragraphs_type.rooms_block
+id: paragraph.rooms_block.field_rooms
+field_name: field_rooms
+entity_type: paragraph
+bundle: rooms_block
+label: 'Zalen (max. 3)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      zaal: zaal
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,16 @@
+{#
+  Organism: USP-balk wrapper
+  Variabelen:
+    - content (render array): Drupal blok-inhoud
+    - title (string, optional)
+#}
+<section class="o-usp-bar py-16 bg-white">
+  <div class="max-w-content mx-auto px-6">
+    {% if title %}
+    <h2 class="o-usp-bar__title text-center font-bold uppercase tracking-widest text-2xl mb-12">
+      {{ title }}
+    </h2>
+    {% endif %}
+    {{ content }}
+  </div>
+</section>

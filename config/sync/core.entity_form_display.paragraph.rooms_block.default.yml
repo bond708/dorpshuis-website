@@ -1,0 +1,34 @@
+uuid: e94e1c97-a4e1-4e65-955b-776c048c7221
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rooms_block.field_rooms
+    - field.field.paragraph.rooms_block.field_rooms_title
+    - paragraphs.paragraphs_type.rooms_block
+id: paragraph.rooms_block.default
+targetEntityType: paragraph
+bundle: rooms_block
+mode: default
+content:
+  field_rooms:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rooms_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,20 @@
+uuid: d246db38-154e-46e1-ac41-fc7e9f592f48
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_rooms
+field_name: field_rooms
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

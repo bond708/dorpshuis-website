@@ -1,0 +1,38 @@
+{#
+  Atom: Button
+  Variables:
+    - label (string, required)
+    - url (string, optional — renders <a> when set, <button> otherwise)
+    - variant (string): primary | secondary | ghost | danger (default: primary)
+    - size (string): sm | md | lg (default: md)
+    - icon (string, optional): icon name
+    - icon_position (string): before | after (default: before)
+    - disabled (bool, default: false)
+    - attributes (Drupal Attribute object, optional)
+    - type (string): submit | button | reset (default: button)
+#}
+{% set variant = variant|default('primary') %}
+{% set size = size|default('md') %}
+{% set tag = url ? 'a' : 'button' %}
+
+{% set size_classes = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-5 py-2.5 text-base',
+  lg: 'px-7 py-3.5 text-lg',
+} %}
+
+<{{ tag }}
+  {% if tag == 'a' %}href="{{ url }}"{% endif %}
+  {% if tag == 'button' %}type="{{ type|default('button') }}"{% endif %}
+  {% if disabled %}{% if tag == 'button' %}disabled{% else %}aria-disabled="true" tabindex="-1"{% endif %}{% endif %}
+  class="btn btn--{{ variant }} {{ size_classes[size] }} inline-flex items-center gap-2 font-medium rounded leading-none transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500 {{ disabled ? 'opacity-50 cursor-not-allowed' : '' }}"
+  {{ attributes }}
+>
+  {% if icon and icon_position != 'after' %}
+    {% include '@dorpshuis/atoms/icon/icon.twig' with { name: icon, size: 'sm' } %}
+  {% endif %}
+  <span>{{ label }}</span>
+  {% if icon and icon_position == 'after' %}
+    {% include '@dorpshuis/atoms/icon/icon.twig' with { name: icon, size: 'sm' } %}
+  {% endif %}
+</{{ tag }}>

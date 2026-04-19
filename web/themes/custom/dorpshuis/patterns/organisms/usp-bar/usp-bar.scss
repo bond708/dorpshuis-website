@@ -1,0 +1,23 @@
+@use '../../../css/abstracts/variables' as *;
+
+.o-usp-bar {
+  &__title {
+    color: $color-text;
+  }
+
+  &__icon {
+    color: $color-accent;
+  }
+
+  &__item-title {
+    color: $color-text;
+  }
+
+  // Views grid override
+  .view-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+    text-align: center;
+  }
+}

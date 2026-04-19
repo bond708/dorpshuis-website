@@ -1,0 +1,22 @@
+uuid: 7e64ff82-1aae-48ff-8801-cd288049b9e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dorpshuis
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: dorpshuis_breadcrumbs
+theme: dorpshuis
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

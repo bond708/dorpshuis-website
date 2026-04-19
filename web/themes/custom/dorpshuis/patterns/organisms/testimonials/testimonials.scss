@@ -1,0 +1,28 @@
+@use '../../../css/abstracts/variables' as *;
+
+.o-testimonials {
+  blockquote,
+  .field--name-body p {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: $color-text;
+    max-width: 60ch;
+    margin: 0 auto 1rem;
+    text-align: center;
+
+    &::before { content: '\201C'; color: $color-accent; font-size: 2rem; line-height: 0; vertical-align: -0.5rem; margin-right: 0.25rem; }
+    &::after  { content: '\201D'; color: $color-accent; font-size: 2rem; line-height: 0; vertical-align: -0.5rem; margin-left: 0.25rem; }
+  }
+
+  cite,
+  .field--name-field-author {
+    display: block;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    color: $color-text-muted;
+    font-size: 0.875rem;
+
+    &::before { content: '— '; }
+  }
+}

@@ -1,0 +1,19 @@
+uuid: fa350433-f6a8-4327-bad8-ea930dd176d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_usp_icon
+    - paragraphs.paragraphs_type.usp
+id: paragraph.usp.field_usp_icon
+field_name: field_usp_icon
+entity_type: paragraph
+bundle: usp
+label: 'Icoon (emoji of tekst)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

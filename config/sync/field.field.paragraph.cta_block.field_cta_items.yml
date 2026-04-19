@@ -1,0 +1,26 @@
+uuid: b9e49ea1-d012-4513-8ce9-7ac70a957187
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_items
+    - paragraphs.paragraphs_type.cta_block
+    - paragraphs.paragraphs_type.cta_item
+  module:
+    - entity_reference_revisions
+id: paragraph.cta_block.field_cta_items
+field_name: field_cta_items
+entity_type: paragraph
+bundle: cta_block
+label: 'CTA items'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cta_item: cta_item
+field_type: entity_reference_revisions

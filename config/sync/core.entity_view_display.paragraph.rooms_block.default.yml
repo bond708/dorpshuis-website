@@ -1,0 +1,31 @@
+uuid: 3f491b71-9098-49d7-a9be-3e32ffa0b13e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rooms_block.field_rooms
+    - field.field.paragraph.rooms_block.field_rooms_title
+    - paragraphs.paragraphs_type.rooms_block
+id: paragraph.rooms_block.default
+targetEntityType: paragraph
+bundle: rooms_block
+mode: default
+content:
+  field_rooms:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_rooms_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

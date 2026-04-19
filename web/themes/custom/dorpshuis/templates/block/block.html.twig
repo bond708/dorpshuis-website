@@ -1,0 +1,17 @@
+{#
+  @file block.html.twig
+#}
+<div{{ attributes.addClass('block') }}>
+  {{ title_prefix }}
+  {% if label %}
+  <h2{{ title_attributes.addClass('block__title font-serif font-bold text-xl mb-4') }}>
+    {{ label }}
+  </h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+  <div{{ content_attributes.addClass('block__content') }}>
+    {{ content }}
+  </div>
+  {% endblock %}
+</div>

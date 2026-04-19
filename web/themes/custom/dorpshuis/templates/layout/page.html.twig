@@ -1,0 +1,78 @@
+{#
+  @file page.html.twig
+#}
+<div class="layout-container flex flex-col min-h-screen">
+
+  {# Header #}
+  {% include '@dorpshuis/organisms/header/header.twig' with {
+    site_name: site_name,
+    logo_path: logo_path,
+    primary_navigation: page.primary_menu,
+    secondary_navigation: page.secondary_menu,
+    search_form: page.header,
+  } %}
+
+  {# Highlighted messages #}
+  {% if page.highlighted %}
+  <div class="layout-highlighted bg-secondary-50 border-b border-secondary-200">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      {{ page.highlighted }}
+    </div>
+  </div>
+  {% endif %}
+
+  {# Main content #}
+  <main id="main-content" class="layout-main flex-1">
+
+    {% if page.breadcrumb %}
+    <div class="layout-breadcrumb bg-neutral-50 border-b border-neutral-200">
+      <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        {{ page.breadcrumb }}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+
+      {% if page.sidebar_first or page.sidebar_second %}
+      <div class="layout-with-sidebar grid gap-8
+        {% if page.sidebar_first and page.sidebar_second %}lg:grid-cols-[250px_1fr_250px]
+        {% elseif page.sidebar_first %}lg:grid-cols-[250px_1fr]
+        {% else %}lg:grid-cols-[1fr_250px]{% endif %}">
+
+        {% if page.sidebar_first %}
+        <aside class="layout-sidebar layout-sidebar--first" aria-label="{{ 'Sidebar'|t }}">
+          {{ page.sidebar_first }}
+        </aside>
+        {% endif %}
+
+        <div class="layout-content">
+          {% if page.help %}{{ page.help }}{% endif %}
+          {{ page.content }}
+        </div>
+
+        {% if page.sidebar_second %}
+        <aside class="layout-sidebar layout-sidebar--second" aria-label="{{ 'Secondary sidebar'|t }}">
+          {{ page.sidebar_second }}
+        </aside>
+        {% endif %}
+
+      </div>
+      {% else %}
+        {% if page.help %}{{ page.help }}{% endif %}
+        {{ page.content }}
+      {% endif %}
+
+    </div>
+  </main>
+
+  {# Footer #}
+  {% include '@dorpshuis/organisms/footer/footer.twig' with {
+    footer_first: page.footer_first,
+    footer_second: page.footer_second,
+    footer_third: page.footer_third,
+    footer_bottom: page.footer_bottom,
+    site_name: site_name,
+  } %}
+
+</div>

@@ -1,0 +1,37 @@
+{#
+  Organism: Card Grid
+  Variables:
+    - items (array of card variables)
+    - title (string, optional): section title
+    - columns (int): 2 | 3 | 4 (default: 3)
+    - cta (object: {label, url}, optional)
+#}
+{% set col_classes = {
+  2: 'sm:grid-cols-2',
+  3: 'sm:grid-cols-2 lg:grid-cols-3',
+  4: 'sm:grid-cols-2 lg:grid-cols-4',
+} %}
+
+<section class="o-card-grid py-12 lg:py-16">
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+
+    {% if title %}
+    <div class="o-card-grid__header flex items-end justify-between mb-8 gap-4">
+      <h2 class="font-serif font-bold text-display-md text-neutral-900">{{ title }}</h2>
+      {% if cta %}
+        {% include '@dorpshuis/atoms/button/button.twig' with {
+          label: cta.label, url: cta.url, variant: 'ghost', size: 'sm',
+          icon: 'arrow-right', icon_position: 'after',
+        } %}
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="o-card-grid__grid grid grid-cols-1 {{ col_classes[columns|default(3)] }} gap-6">
+      {% for item in items %}
+        {% include '@dorpshuis/molecules/card/card.twig' with item %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

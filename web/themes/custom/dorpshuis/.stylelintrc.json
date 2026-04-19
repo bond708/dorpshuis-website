@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "selector-class-pattern": [
+      "^(o|m|a|t|l|u|js)-[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z][a-z0-9]*(-[a-z0-9]+)*)?(--[a-z][a-z0-9]*(-[a-z0-9]+)*)?$|^(btn|field|form|node|block|pager|menu|breadcrumb|messages|tabs|visually-hidden|skip-link|icon|layout)[a-z0-9-_]*$",
+      { "message": "Use BEM with Atomic Design prefix (o-, m-, a-, t-, l-) or Drupal class names." }
+    ],
+    "no-descending-specificity": null,
+    "scss/at-import-partial-extension": null
+  }
+}

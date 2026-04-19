@@ -1,0 +1,87 @@
+{#
+  Organism: Site Footer
+  Variabelen:
+    - footer_first..footer_third (render arrays)
+    - footer_bottom (render array)
+    - site_name (string)
+
+  Gebruik:
+    footer_first  → Contactgegevens blok (regio Footer first)
+    footer_second → Webform 'contact' blok (regio Footer second)
+#}
+<footer class="o-footer bg-primary-600 text-white mt-auto" role="contentinfo">
+
+  <div class="o-footer__main">
+    <div class="max-w-content mx-auto px-6 py-12 grid gap-12 md:grid-cols-2">
+
+      {# Links: adres + kaart #}
+      <div class="o-footer__col">
+
+        {% if footer_first %}
+          {{ footer_first }}
+        {% else %}
+          <h3 class="text-accent-400 text-2xl font-bold mb-4">{{ 'Contact'|t }}</h3>
+          <p>Borgercompagnie 204A</p>
+          <p>9631 TN Borgercompagnie</p>
+          <p><a href="mailto:info@dorpshuisborgercompagnie.nl" class="text-white/80 hover:text-white">
+            info@dorpshuisborgercompagnie.nl
+          </a></p>
+        {% endif %}
+
+        <div class="o-footer__map mt-6 rounded-lg overflow-hidden h-48">
+          <iframe
+            title="{{ 'Locatie Dorpshuis Borgercompagnie'|t }}"
+            src="https://maps.google.com/maps?q=Borgercompagnie+204A,+9631+TN+Borgercompagnie&output=embed&z=15"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=Borgercompagnie+204A,+9631+TN+Borgercompagnie"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-3 text-sm text-accent-400 hover:text-white transition-colors no-underline"
+          aria-label="{{ 'Route plannen naar Dorpshuis Borgercompagnie (opent in nieuw tabblad)'|t }}"
+        >
+          {{ 'Route plannen →'|t }}
+        </a>
+
+      </div>
+
+      {# Rechts: contactformulier (webform blok in regio footer_second) #}
+      <div class="o-footer__col o-footer__form">
+
+        {% if footer_second %}
+          {{ footer_second }}
+        {% else %}
+          <h3 class="text-2xl font-bold mb-2">{{ 'Direct Aanvragen'|t }}</h3>
+          <p class="text-white/60 text-sm mb-4">
+            {{ 'Plaats hier het Webform-blok "Contactformulier" via Admin → Structuur → Blokopmaak → Footer second.'|t }}
+          </p>
+        {% endif %}
+
+        {% if footer_third %}
+          {{ footer_third }}
+        {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="o-footer__bottom border-t border-white/10">
+    <div class="max-w-content mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/50">
+      {% if footer_bottom %}
+        {{ footer_bottom }}
+      {% else %}
+        <p>&copy; {{ "now"|date("Y") }} {{ site_name }}. {{ 'Alle rechten voorbehouden.'|t }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+</footer>

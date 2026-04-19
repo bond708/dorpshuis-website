@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
+session:
+  parameter: language
+url:
+  source: path_prefix
+  prefixes:
+    en: en
+    nl: nl
+  domains:
+    en: ''
+    nl: ''
+selected_langcode: nl
+language_interface:
+  enabled:
+    language-user: -8
+    language-selected: 12
+  method_weights_defaults:
+    language-user: -8
+    language-selected: 12

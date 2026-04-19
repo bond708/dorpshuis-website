@@ -1,0 +1,31 @@
+uuid: 234df782-1621-4eed-8a56-0ead499636bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.usps
+    - field.storage.block_content.field_usps
+    - paragraphs.paragraphs_type.usp
+  module:
+    - entity_reference_revisions
+id: block_content.usps.field_usps
+field_name: field_usps
+entity_type: block_content
+bundle: usps
+label: 'USP items'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      usp: usp
+    negate: 0
+    target_bundles_drag_drop:
+      usp:
+        weight: 0
+        enabled: true
+field_type: entity_reference_revisions

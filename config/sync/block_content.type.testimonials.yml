@@ -1,0 +1,8 @@
+uuid: 13395548-4981-433a-bfa9-c8579cfe4131
+langcode: en
+status: true
+dependencies: {  }
+id: testimonials
+label: 'Homepage Referenties'
+revision: false
+description: 'Blok met referenties/testimonials (paragraph)'

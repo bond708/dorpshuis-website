@@ -1,0 +1,72 @@
+{#
+  Organism: Site Header
+  Variables:
+    - site_name (string)
+    - logo_url (string, optional)
+    - logo_path (string, optional)
+    - primary_navigation (render array)
+    - secondary_navigation (render array, optional)
+    - search_form (render array, optional)
+#}
+<header class="o-header bg-white shadow-nav sticky top-0 z-[100]" role="banner">
+  <div class="o-header__inner max-w-content mx-auto px-6 py-4 flex items-center justify-between">
+
+    {# Logo / sitenaam #}
+    <a href="{{ path('<front>') }}" rel="home" class="o-header__brand no-underline flex items-center" aria-label="{{ site_name }} – {{ 'Home'|t }}">
+      {% if logo_path %}
+        <img src="{{ logo_path }}" alt="{{ site_name }}" class="h-8 w-auto">
+      {% else %}
+        {# Splits sitenaam op spatie voor accent op eerste woord #}
+        {% set name_parts = site_name|split(' ') %}
+        <span class="text-xl font-bold tracking-tighter text-primary-600">
+          {{- name_parts[0] -}}<span class="text-accent">{{- name_parts[1:] | join(' ') -}}</span>
+        </span>
+      {% endif %}
+    </a>
+
+    {# Desktop navigatie #}
+    <nav class="o-header__nav hidden md:flex items-center space-x-8" aria-label="{{ 'Main navigation'|t }}">
+      {{ primary_navigation }}
+    </nav>
+
+    {# Acties rechts #}
+    <div class="o-header__actions flex items-center gap-4">
+      {% if search_form %}
+        <div class="hidden lg:block">{{ search_form }}</div>
+      {% endif %}
+
+      {# Reserveren CTA #}
+      <a href="/contact" class="hidden md:inline-flex btn-accent text-sm py-2 px-5 rounded no-underline">
+        {{ 'Direct reserveren'|t }}
+      </a>
+
+      {# Mobile toggle #}
+      <button
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded text-neutral-700 hover:bg-neutral-100 transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="{{ 'Open menu'|t }}"
+        data-mobile-toggle
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  {# Mobile menu #}
+  <div
+    id="mobile-menu"
+    class="o-header__mobile-menu md:hidden hidden border-t border-neutral-200 bg-white"
+    aria-hidden="true"
+  >
+    <div class="max-w-content mx-auto px-6 py-4">
+      {{ primary_navigation }}
+      <a href="/contact" class="mt-4 btn-accent block text-center text-sm no-underline">
+        {{ 'Direct reserveren'|t }}
+      </a>
+    </div>
+  </div>
+</header>

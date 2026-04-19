@@ -1,0 +1,13 @@
+uuid: 16a253b9-72c0-4cd7-939c-7f1507e24b1b
+langcode: nl
+status: false
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: QJ2aZ1xfVf59aq6Pz5X7fyUOa2HxuCoTwQ_RQjoulAU
+id: node.full
+label: 'Volledige inhoud'
+description: ''
+targetEntityType: node
+cache: true

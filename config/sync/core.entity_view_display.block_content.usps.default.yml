@@ -1,0 +1,25 @@
+uuid: 9418b40b-32bb-4c21-8f65-0cd01001b697
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.usps
+    - field.field.block_content.usps.field_usps
+  module:
+    - entity_reference_revisions
+id: block_content.usps.default
+targetEntityType: block_content
+bundle: usps
+mode: default
+content:
+  field_usps:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

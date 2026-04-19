@@ -1,0 +1,31 @@
+uuid: fe3faf09-da6b-49b1-bcad-0d1e41522a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.testimonials
+    - field.storage.block_content.field_testimonials
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - entity_reference_revisions
+id: block_content.testimonials.field_testimonials
+field_name: field_testimonials
+entity_type: block_content
+bundle: testimonials
+label: Referenties
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      testimonial: testimonial
+    negate: 0
+    target_bundles_drag_drop:
+      testimonial:
+        weight: 0
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,22 @@
+uuid: bcea659f-209e-4e14-86ff-02e3e0c2347a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.text_block
+  module:
+    - text
+id: paragraph.text_block.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: text_block
+label: Inhoud
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

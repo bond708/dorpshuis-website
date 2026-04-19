@@ -1,0 +1,19 @@
+uuid: 01341fac-2587-4ade-b332-85ce7e136a02
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_title
+    - paragraphs.paragraphs_type.cta_item
+id: paragraph.cta_item.field_cta_title
+field_name: field_cta_title
+entity_type: paragraph
+bundle: cta_item
+label: Titel
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

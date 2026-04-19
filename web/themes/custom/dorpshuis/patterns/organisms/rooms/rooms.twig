@@ -1,0 +1,16 @@
+{#
+  Organism: Zalenoverzicht wrapper (donkere sectie)
+  Variabelen:
+    - content (render array): View of blokken met zalen
+    - title (string, optional)
+#}
+<section class="o-rooms bg-primary-600 text-white py-16">
+  <div class="max-w-content mx-auto px-6">
+    {% if title %}
+    <h2 class="o-rooms__title text-center font-bold uppercase tracking-widest text-2xl mb-12">
+      {{ title }}
+    </h2>
+    {% endif %}
+    {{ content }}
+  </div>
+</section>

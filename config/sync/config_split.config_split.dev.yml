@@ -1,0 +1,16 @@
+uuid: 21aa3848-261a-4948-ac89-a292e8a2f611
+langcode: nl
+status: true
+dependencies: {  }
+id: dev
+label: Development
+description: 'Lokale ontwikkelmodules (devel, kint, etc.)'
+weight: 0
+stackable: false
+no_patching: false
+storage: null
+folder: ../config/split/dev
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

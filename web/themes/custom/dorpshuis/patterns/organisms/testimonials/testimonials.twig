@@ -1,0 +1,16 @@
+{#
+  Organism: Referenties wrapper
+  Variabelen:
+    - content (render array)
+    - title (string, optional)
+#}
+<section class="o-testimonials bg-neutral-50 py-16">
+  <div class="max-w-content mx-auto px-6">
+    {% if title %}
+    <h2 class="o-testimonials__title text-center font-bold uppercase tracking-widest text-2xl mb-12">
+      {{ title }}
+    </h2>
+    {% endif %}
+    {{ content }}
+  </div>
+</section>

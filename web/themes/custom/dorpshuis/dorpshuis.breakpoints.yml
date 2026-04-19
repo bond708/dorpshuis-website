@@ -1,0 +1,31 @@
+dorpshuis.sm:
+  label: Small
+  mediaQuery: 'all and (min-width: 640px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+
+dorpshuis.md:
+  label: Medium
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+dorpshuis.lg:
+  label: Large
+  mediaQuery: 'all and (min-width: 1024px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+
+dorpshuis.xl:
+  label: Extra Large
+  mediaQuery: 'all and (min-width: 1280px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x

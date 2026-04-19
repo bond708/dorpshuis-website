@@ -1,0 +1,41 @@
+uuid: b3390cd6-3ad0-46f4-83d4-cb5d33ef564f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_blocks
+    - node.type.page
+    - paragraphs.paragraphs_type.cta_block
+    - paragraphs.paragraphs_type.rooms_block
+    - paragraphs.paragraphs_type.text_block
+  module:
+    - entity_reference_revisions
+id: node.page.field_content_blocks
+field_name: field_content_blocks
+entity_type: node
+bundle: page
+label: Inhoudsblokken
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_block: text_block
+      cta_block: cta_block
+      rooms_block: rooms_block
+    negate: 0
+    target_bundles_drag_drop:
+      cta_block:
+        weight: 1
+        enabled: true
+      rooms_block:
+        weight: 2
+        enabled: true
+      text_block:
+        weight: 0
+        enabled: true
+field_type: entity_reference_revisions

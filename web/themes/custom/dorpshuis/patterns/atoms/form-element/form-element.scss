@@ -1,0 +1,40 @@
+@use '../../../css/abstracts/variables' as *;
+
+// Overrides for Drupal form elements not covered by @tailwindcss/forms.
+
+.form-item {
+  margin-bottom: 1.25rem;
+
+  &__label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-text;
+    margin-bottom: 0.375rem;
+
+    .form-required { color: #dc2626; margin-left: 0.125rem; }
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+    margin-top: 0.375rem;
+    line-height: 1.4;
+  }
+
+  &--error {
+    .form-text,
+    .form-select,
+    .form-textarea {
+      border-color: #dc2626;
+
+      &:focus { box-shadow: 0 0 0 2px rgb(220 38 38 / 20%); }
+    }
+  }
+
+  &__error-message {
+    font-size: 0.8125rem;
+    color: #dc2626;
+    margin-top: 0.375rem;
+  }
+}

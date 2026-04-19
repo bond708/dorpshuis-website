@@ -1,0 +1,78 @@
+@use '../../../css/abstracts/variables' as *;
+@use '../../../css/abstracts/mixins' as *;
+
+// Desktop navigatie
+.o-header__nav {
+  .menu { display: flex; gap: 2rem; padding: 0; margin: 0; }
+  .menu__item { list-style: none; }
+
+  .menu__link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: $color-text;
+    text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover,
+    &--active-trail { color: $color-accent; }
+
+    &:focus-visible { @include focus-ring; }
+  }
+
+  // Dropdown
+  .menu__item--expanded {
+    position: relative;
+
+    > .menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      flex-direction: column;
+      gap: 0;
+      min-width: 14rem;
+      background: #fff;
+      border-radius: $radius-lg;
+      box-shadow: 0 8px 24px 0 rgb(0 0 0 / 12%), 0 0 1px 0 rgb(0 0 0 / 6%);
+      padding: 0.5rem;
+      z-index: $z-nav;
+    }
+
+    &:hover > .menu,
+    &:focus-within > .menu {
+      display: flex;
+      animation: fadeUp 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// Mobiele navigatie
+.o-header__mobile-menu {
+  .menu { padding: 0; margin: 0; flex-direction: column; }
+  .menu__item { list-style: none; border-bottom: 1px solid $color-border; }
+  .menu__item:last-child { border-bottom: 0; }
+
+  .menu__link {
+    display: block;
+    padding: 0.75rem 0;
+    font-weight: 500;
+    color: $color-text;
+    text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover,
+    &--active-trail { color: $color-accent; }
+  }
+
+  .menu__item--expanded > .menu {
+    padding-left: 1rem;
+    border-top: 1px solid $color-border;
+  }
+}

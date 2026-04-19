@@ -1,0 +1,20 @@
+{# @file paragraph--cta-item.html.twig #}
+{% set url = content.field_cta_url|render|striptags|trim %}
+<div{{ attributes.addClass('paragraph', 'paragraph--cta-item',
+  'flex flex-col bg-white rounded-lg shadow-card p-8 gap-4') }}>
+
+  {% if content.field_cta_title|render|striptags|trim %}
+  <h3 class="font-bold text-xl text-neutral-900">{{ content.field_cta_title }}</h3>
+  {% endif %}
+
+  {% if content.field_cta_text|render|striptags|trim %}
+  <p class="text-neutral-600 text-sm leading-relaxed flex-1">{{ content.field_cta_text }}</p>
+  {% endif %}
+
+  {% if content.field_cta_url|render|striptags|trim %}
+  <div class="mt-auto">
+    {{ content.field_cta_url }}
+  </div>
+  {% endif %}
+
+</div>

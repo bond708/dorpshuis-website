@@ -1,0 +1,10 @@
+uuid: 1a7fe43d-e4ae-490b-9aaf-f27dc9989615
+langcode: nl
+status: true
+dependencies: {  }
+id: text_block
+label: Tekstblok
+icon_uuid: null
+icon_default: null
+description: 'Vrije tekst met opmaak (WYSIWYG).'
+behavior_plugins: {  }

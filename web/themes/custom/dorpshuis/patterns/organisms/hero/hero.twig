@@ -1,0 +1,63 @@
+{#
+  Organism: Hero (split)
+  Variabelen:
+    - title (string)
+    - subtitle (string, optional)
+    - image (string): URL gebouwfoto rechts
+    - image_alt (string)
+    - cta_primary  {label, url}
+    - cta_secondary {label, url}
+    - content (render array, optional): Drupal block-inhoud voor linkerhelft
+#}
+<section class="o-hero" aria-labelledby="hero-title">
+
+  {# Linker helft: donker + tekst #}
+  <div class="o-hero__text bg-primary-600 text-white flex items-center">
+    <div class="o-hero__text-inner px-8 lg:px-16 py-16 max-w-xl">
+
+      <h1 id="hero-title" class="o-hero__title font-bold uppercase mb-6 leading-tight">
+        {{ title }}
+      </h1>
+
+      {% if subtitle %}
+      <p class="o-hero__subtitle text-white/80 text-lg leading-relaxed mb-10">
+        {{ subtitle }}
+      </p>
+      {% endif %}
+
+      {% if content %}
+        {{ content }}
+      {% endif %}
+
+      <div class="o-hero__actions flex flex-wrap gap-4">
+        {% if cta_primary %}
+        <a href="{{ cta_primary.url }}" class="o-hero__btn o-hero__btn--accent no-underline">
+          [ {{ cta_primary.label }} ]
+        </a>
+        {% endif %}
+        {% if cta_secondary %}
+        <a href="{{ cta_secondary.url }}" class="o-hero__btn o-hero__btn--outline no-underline">
+          [ {{ cta_secondary.label }} ]
+        </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  {# Rechter helft: gebouwfoto #}
+  <div class="o-hero__image">
+    {% if image %}
+    <img
+      src="{{ image }}"
+      alt="{{ image_alt|default('Dorpshuis De Eersteling Borgercompagnie') }}"
+      class="w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    >
+    {% else %}
+    <div class="w-full h-full bg-primary-800"></div>
+    {% endif %}
+  </div>
+
+</section>

@@ -1,0 +1,45 @@
+name: Dorpshuis
+type: theme
+description: 'Custom Drupal theme voor Dorpshuis De Eersteling, Borgercompagnie.'
+package: Custom
+core_version_requirement: ^10 || ^11
+base theme: false
+
+logo: logo.svg
+
+# Libraries
+libraries:
+  - dorpshuis/global
+  - dorpshuis/header
+  - dorpshuis/navigation
+
+# Twig namespaces via drupal/components module
+components:
+  namespaces:
+    dorpshuis:
+      - patterns
+
+# Regions
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  # Homepage-specifieke regio's
+  hp_hero: 'Homepage: Hero'
+  hp_usps: 'Homepage: USPs'
+  hp_rooms: 'Homepage: Zalen'
+  hp_testimonials: 'Homepage: Referenties'
+  hp_agenda: 'Homepage: Agenda'
+  hp_news: 'Homepage: Nieuws'
+  # Standaard content
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  # Footer
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_bottom: 'Footer bottom'

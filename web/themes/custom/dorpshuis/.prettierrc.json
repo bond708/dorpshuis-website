@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": "*.twig",
+      "options": { "parser": "html", "tabWidth": 2 }
+    },
+    {
+      "files": "*.yml",
+      "options": { "tabWidth": 2 }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{#
+  @file node.html.twig
+#}
+<article{{ attributes.addClass('node', 'node--' ~ node.bundle, 'node--' ~ view_mode) }}>
+
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+  <footer class="node__meta flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-500 mb-4">
+    <span class="node__submitted">
+      {{ 'Published'|t }} <time datetime="{{ node.created.value|date('c') }}">{{ node.created.value|date('d M Y') }}</time>
+      {% if author_name %}{{ 'by'|t }} <span class="font-medium text-neutral-700">{{ author_name }}</span>{% endif %}
+    </span>
+  </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
+  </div>
+
+</article>
