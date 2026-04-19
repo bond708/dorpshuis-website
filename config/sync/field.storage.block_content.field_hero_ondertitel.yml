@@ -1,0 +1,19 @@
+uuid: 696d666b-c6c0-4c8d-8bac-dfcaa5663bf5
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_hero_ondertitel
+field_name: field_hero_ondertitel
+entity_type: block_content
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

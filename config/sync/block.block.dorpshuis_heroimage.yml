@@ -1,0 +1,23 @@
+uuid: 311c2817-4b09-4ee1-992f-3bbac18d8131
+langcode: nl
+status: true
+dependencies:
+  content:
+    - 'block_content:hero_blok:3046967e-218f-4595-b478-9532ebd1e798'
+  module:
+    - block_content
+  theme:
+    - dorpshuis
+id: dorpshuis_heroimage
+theme: dorpshuis
+region: hp_hero
+weight: 0
+provider: null
+plugin: 'block_content:3046967e-218f-4595-b478-9532ebd1e798'
+settings:
+  id: 'block_content:3046967e-218f-4595-b478-9532ebd1e798'
+  label: 'hero image'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

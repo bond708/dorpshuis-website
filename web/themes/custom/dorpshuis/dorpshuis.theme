@@ -39,6 +39,42 @@ function dorpshuis_preprocess_block(array &$variables): void {
   if (isset($variables['elements']['#id'])) {
     $variables['attributes']['id'] = 'block-' . $variables['elements']['#id'];
   }
+
+  // Hero blok: veldwaarden extraheren voor block--bundle--hero-blok.html.twig.
+  $block_content = $variables['elements']['content']['#block_content'] ?? NULL;
+  if ($block_content && $block_content->bundle() === 'hero_blok') {
+    $variables['hero_titel']     = $block_content->get('field_hero_titel')->value ?? '';
+    $variables['hero_ondertitel'] = $block_content->get('field_hero_ondertitel')->value ?? '';
+
+    // Afbeelding: genereer absolute URL.
+    $variables['hero_image_url'] = NULL;
+    $variables['hero_image_alt'] = '';
+    if (!$block_content->get('field_hero_afbeelding')->isEmpty()) {
+      /** @var \Drupal\file\Plugin\Field\FieldType\FileItem $item */
+      $item = $block_content->get('field_hero_afbeelding')->first();
+      /** @var \Drupal\file\Entity\File $file */
+      $file = $item->entity;
+      if ($file) {
+        $variables['hero_image_url'] = \Drupal::service('file_url_generator')
+          ->generateAbsoluteString($file->getFileUri());
+        $variables['hero_image_alt'] = $item->alt ?? '';
+      }
+    }
+
+    // CTA-knoppen: link-veld heeft 'title' (knoptekst) en 'uri'.
+    $variables['hero_cta_primair']   = NULL;
+    $variables['hero_cta_secundair'] = NULL;
+    foreach (['primair', 'secundair'] as $slot) {
+      $field = $block_content->get('field_hero_cta_' . $slot);
+      if (!$field->isEmpty()) {
+        $link = $field->first();
+        $variables['hero_cta_' . $slot] = [
+          'label' => $link->title,
+          'url'   => $link->getUrl()->toString(),
+        ];
+      }
+    }
+  }
 }
 
 /**
@@ -56,6 +92,13 @@ function dorpshuis_theme_suggestions_page_alter(array &$suggestions, array $vari
 function dorpshuis_theme_suggestions_block_alter(array &$suggestions, array $variables): void {
   if (!empty($variables['elements']['#id'])) {
     $suggestions[] = 'block__' . $variables['elements']['#id'];
+  }
+
+  // Voeg block__bundle__<bundle> toe zodat block--bundle--hero-blok.html.twig
+  // automatisch wordt geladen voor alle blokken van dat type.
+  $block_content = $variables['elements']['content']['#block_content'] ?? NULL;
+  if ($block_content) {
+    $suggestions[] = 'block__bundle__' . $block_content->bundle();
   }
 }
 

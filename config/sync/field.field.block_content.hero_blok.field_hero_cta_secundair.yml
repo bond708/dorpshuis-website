@@ -1,0 +1,23 @@
+uuid: f9c91e01-2a9e-437c-957f-c4a293a96403
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_blok
+    - field.storage.block_content.field_hero_cta_secundair
+  module:
+    - link
+id: block_content.hero_blok.field_hero_cta_secundair
+field_name: field_hero_cta_secundair
+entity_type: block_content
+bundle: hero_blok
+label: 'Knop 2 (wit omlijnd / secundair)'
+description: 'Witte omlijningknop, bijvoorbeeld: tekst "Direct reserveren" → link "/contact". Optioneel.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

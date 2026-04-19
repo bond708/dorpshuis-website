@@ -1,0 +1,8 @@
+uuid: ed3859a0-e1bb-4261-9261-e0d3f9ed5f1f
+langcode: nl
+status: true
+dependencies: {  }
+id: hero_blok
+label: 'Homepage Hero'
+revision: true
+description: 'Inhoud van de hero-sectie bovenaan de homepage: afbeelding, titel, ondertitel en knoppen.'

@@ -1,0 +1,9 @@
+{# @file block--bundle--hero-blok.html.twig #}
+{% include '@dorpshuis/organisms/hero/hero.twig' with {
+  title:         hero_titel,
+  subtitle:      hero_ondertitel,
+  image:         hero_image_url,
+  image_alt:     hero_image_alt,
+  cta_primary:   hero_cta_primair,
+  cta_secondary: hero_cta_secundair,
+} only %}

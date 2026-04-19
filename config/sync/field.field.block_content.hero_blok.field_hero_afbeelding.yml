@@ -1,0 +1,38 @@
+uuid: 46404c94-33c0-4510-a3d9-76c9c880e32e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_blok
+    - field.storage.block_content.field_hero_afbeelding
+  module:
+    - image
+id: block_content.hero_blok.field_hero_afbeelding
+field_name: field_hero_afbeelding
+entity_type: block_content
+bundle: hero_blok
+label: Hero-afbeelding
+description: 'Upload hier de foto die rechts in de hero-sectie verschijnt. Aanbevolen formaat: minimaal 1200 × 900 px, liggende oriëntatie (landscape). De afbeelding wordt bijgesneden om de sectie te vullen.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg jpeg png webp'
+  max_filesize: '5 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

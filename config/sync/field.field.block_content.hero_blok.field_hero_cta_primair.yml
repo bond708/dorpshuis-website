@@ -1,0 +1,23 @@
+uuid: 4897c3bf-f28a-47a2-92b7-248ece3c90bc
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_blok
+    - field.storage.block_content.field_hero_cta_primair
+  module:
+    - link
+id: block_content.hero_blok.field_hero_cta_primair
+field_name: field_hero_cta_primair
+entity_type: block_content
+bundle: hero_blok
+label: 'Knop 1 (goud / primair)'
+description: 'Goudkleurige actieknop, bijvoorbeeld: tekst "Bekijk onze zalen" → link "/zalen". Optioneel.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

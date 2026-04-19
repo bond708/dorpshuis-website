@@ -1,0 +1,19 @@
+uuid: 24b5676e-2f01-40c2-b36e-6d777c10ffb6
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_hero_cta_primair
+field_name: field_hero_cta_primair
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

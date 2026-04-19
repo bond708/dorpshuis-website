@@ -1,0 +1,30 @@
+uuid: eb2e66b3-0474-4384-9865-97940192ce25
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_content
+    - file
+    - image
+id: block_content.field_hero_afbeelding
+field_name: field_hero_afbeelding
+entity_type: block_content
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: true
+  uri_scheme: public
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

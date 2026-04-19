@@ -20,18 +20,16 @@
 
   <main id="main-content" class="flex-1">
 
-    {# ── Hero (split: tekst links / foto rechts) ─────────────────────────── #}
+    {# ── Hero ────────────────────────────────────────────────────────────── #}
     {#
-      Plaats in /admin/structure/block een "Aangepast blok" in regio
-      "Homepage: Hero" met titel + ondertitel + knoppen.
-      Of gebruik het gewone content-blok als je de hero als node beheert.
+      Beheer via Admin → Structuur → Blokinhoud → Homepage Hero.
+      Blok plaatsen in regio "Homepage: Hero" via Blokopmaak.
+      Het block--bundle--hero-blok.html.twig template verzorgt de opmaak.
     #}
     {% if page.hp_hero %}
-      {% include '@dorpshuis/organisms/hero/hero.twig' with {
-        content: page.hp_hero,
-      } %}
+      {{ page.hp_hero }}
     {% else %}
-      {# Fallback: standaard hero zonder Drupal-blok #}
+      {# Fallback: toon een lege hero totdat een redacteur het blok aanmaakt #}
       {% include '@dorpshuis/organisms/hero/hero.twig' with {
         title:         site_name,
         subtitle:      site_slogan,
