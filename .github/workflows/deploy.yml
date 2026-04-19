@@ -1,9 +1,13 @@
 name: Deploy naar TransIP
 
+# Uitgeschakeld: TransIP shared hosting blokkeert inkomende SSH-verbindingen
+# vanuit datacenter-IPs (waaronder GitHub Actions). Deploy loopt via
+# scripts/deploy.sh op de lokale machine.
+#
+# Alleen nog handmatig via workflow_dispatch — laat staan voor toekomstig
+# gebruik als we naar een VPS migreren.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
