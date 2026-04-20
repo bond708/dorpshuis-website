@@ -23,6 +23,7 @@ function dorpshuis_preprocess_html(array &$variables): void {
 function dorpshuis_preprocess_page(array &$variables): void {
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
   $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan');
+  $variables['logo_path'] = theme_get_setting('logo.url');
 }
 
 /**

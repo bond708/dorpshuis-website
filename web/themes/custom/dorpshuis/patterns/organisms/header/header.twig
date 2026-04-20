@@ -14,7 +14,7 @@
     {# Logo / sitenaam #}
     <a href="{{ path('<front>') }}" rel="home" class="o-header__brand no-underline flex items-center" aria-label="{{ site_name }} – {{ 'Home'|t }}">
       {% if logo_path %}
-        <img src="{{ logo_path }}" alt="{{ site_name }}" class="h-8 w-auto">
+        <img src="{{ logo_path }}" alt="{{ site_name }}" class="h-8 md:h-40 w-auto">
       {% else %}
         {# Splits sitenaam op spatie voor accent op eerste woord #}
         {% set name_parts = site_name|split(' ') %}
