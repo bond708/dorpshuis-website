@@ -1,0 +1,29 @@
+{
+    "_hash": "9ebacb9a7f0a6f112edf4bf3ae5e78d2d08e28de3a3ca0aaa7f24ea6b892efaf",
+    "patches": {
+        "drupal/config_ignore": [
+            {
+                "package": "drupal/config_ignore",
+                "description": "PHP 8.4 nullable Request parameter deprecation",
+                "url": "patches/config_ignore-php84-nullable-request.patch",
+                "sha256": "3b9ccc4763c638ed9360bb75c003c107ea8d5c92a57cda42c1220de59a3f84c2",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ],
+        "drupal/webp": [
+            {
+                "package": "drupal/webp",
+                "description": "PHP 8.4 nullable StreamWrapperManager parameter deprecation",
+                "url": "patches/webp-php84-nullable-stream-wrapper.patch",
+                "sha256": "62ac1fcdc0a58cbf9903cd8093a0666cc5a070fcbd3af4802776b25775455066",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

@@ -12,6 +12,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.wowww.nl/drupal10"
         }
     ],
     "require": {
@@ -33,6 +37,7 @@
         "drupal/diff": "^1.10",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/environment_indicator": "^4.0",
+        "drupal/environment_indicator_toolbar": "^4.0",
         "drupal/focal_point": "^2.1",
         "drupal/gin": "^5.0",
         "drupal/gin_login": "^2.1",

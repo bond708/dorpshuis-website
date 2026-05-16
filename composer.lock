@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f32458dc4c0ddbfab1ad7dea99cfb2a",
+    "content-hash": "34437c372b6930c162a544ebb7b14228",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2544,6 +2544,56 @@
             "support": {
                 "source": "https://git.drupal.org/project/environment_indicator.git",
                 "issues": "https://www.drupal.org/project/issues/environment_indicator"
+            }
+        },
+        {
+            "name": "drupal/environment_indicator_toolbar",
+            "version": "4.0.25",
+            "require": {
+                "drupal/core": "^9.3 || ^10 || ^11",
+                "drupal/environment_indicator": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.25",
+                    "datestamp": "1753296518",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                },
+                {
+                    "name": "isholgueras",
+                    "homepage": "https://www.drupal.org/user/733162"
+                },
+                {
+                    "name": "lullabot",
+                    "homepage": "https://www.drupal.org/user/3815489"
+                },
+                {
+                    "name": "mrfelton",
+                    "homepage": "https://www.drupal.org/user/305669"
+                },
+                {
+                    "name": "trackleft2",
+                    "homepage": "https://www.drupal.org/user/2860655"
+                }
+            ],
+            "description": "Changes the toolbar background and text color depending on environment.",
+            "homepage": "https://www.drupal.org/project/environment_indicator",
+            "support": {
+                "source": "https://git.drupalcode.org/project/environment_indicator"
             }
         },
         {
