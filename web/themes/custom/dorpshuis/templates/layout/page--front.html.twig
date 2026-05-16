@@ -1,10 +1,55 @@
 {#
   @file page--front.html.twig
-  Homepage template — regio's ingesteld via Drupal admin > Structuur > Blokken
+  Tijdelijke homepage: logo boven, adres + contact onder.
+  Adres  → regio "Footer first"  (Admin → Structuur → Blokopmaak)
+  Contact → regio "Footer second" (webform-blok)
+
+  Om terug te schakelen naar de volledige homepage: verwijder deze tijdelijke
+  sectie en uncomment het blok hieronder.
 #}
+<div class="layout-container h-screen overflow-hidden flex flex-col bg-white">
+
+  {# ── Logo (bovenste helft) ───────────────────────────────────────────────── #}
+  <div class="h-1/2 flex items-center justify-center px-6">
+    {% if logo_path %}
+      <img src="{{ logo_path }}"
+           alt="{{ site_name }}"
+           class="w-auto max-h-[42vh] max-w-[80vw]">
+    {% else %}
+      <span class="text-primary-600 text-4xl font-bold">{{ site_name }}</span>
+    {% endif %}
+  </div>
+
+  {# ── Adres + Contact (onderste helft) ───────────────────────────────────── #}
+  <div class="h-1/2 overflow-hidden border-t border-neutral-100">
+    <div class="h-full max-w-content mx-auto px-6 py-8 grid gap-8 md:grid-cols-2">
+
+      {# Links: adresgegevens — plaats blok in regio "Footer first" #}
+      <div class="flex flex-col justify-center text-primary-600 overflow-hidden">
+        {{ page.footer_first }}
+      </div>
+
+      {# Rechts: e-mailadres #}
+      <div class="flex flex-col justify-center text-primary-600">
+        <a href="mailto:dorpshuisbc@outlook.com"
+           class="text-lg font-medium hover:text-accent-400 transition-colors no-underline">
+          dorpshuisbc@outlook.com
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <a href="#main-content" class="sr-only focus:not-sr-only">{{ 'Naar inhoud'|t }}</a>
+  <main id="main-content"></main>
+
+</div>
+
+{#
+  ── Volledige homepage (uncomment om terug te schakelen) ─────────────────────
+
 <div class="layout-container flex flex-col min-h-screen">
 
-  {# ── Header ─────────────────────────────────────────────────────────────── #}
   {% include '@dorpshuis/organisms/header/header.twig' with {
     site_name:           site_name,
     logo_path:           logo_path,
@@ -19,75 +64,36 @@
   {% endif %}
 
   <main id="main-content" class="flex-1">
-
-    {# ── Hero ────────────────────────────────────────────────────────────── #}
-    {#
-      Beheer via Admin → Structuur → Blokinhoud → Homepage Hero.
-      Blok plaatsen in regio "Homepage: Hero" via Blokopmaak.
-      Het block--bundle--hero-blok.html.twig template verzorgt de opmaak.
-    #}
     {{ page.hp_hero }}
-
-    {# ── USP-balk ────────────────────────────────────────────────────────── #}
-    {#
-      Drupal admin: plaats een "Blokkenlijst" of "Aangepaste blok" in
-      regio "Homepage: USPs".
-      Tip: gebruik de module "Basic Block" of een View met 3 items.
-    #}
     {% if page.hp_usps %}
       {% include '@dorpshuis/organisms/usp-bar/usp-bar.twig' with {
         title:   'Waarom Borgercompagnie?'|t,
         content: page.hp_usps,
       } %}
     {% endif %}
-
-    {# ── Zalenoverzicht (donkere sectie) ─────────────────────────────────── #}
-    {#
-      Drupal admin: maak een View "Zalen" (content type: Zaal) en
-      plaats die in regio "Homepage: Zalen".
-    #}
     {% if page.hp_rooms %}
       {% include '@dorpshuis/organisms/rooms/rooms.twig' with {
         title:   'Zalenoverzicht'|t,
         content: page.hp_rooms,
       } %}
     {% endif %}
-
-    {# ── Referenties ─────────────────────────────────────────────────────── #}
-    {#
-      Drupal admin: View "Referenties" (content type: Testimonial) →
-      regio "Homepage: Referenties".
-    #}
     {% if page.hp_testimonials %}
       {% include '@dorpshuis/organisms/testimonials/testimonials.twig' with {
         title:   'Referenties'|t,
         content: page.hp_testimonials,
       } %}
     {% endif %}
-
-    {# ── Agenda Actueel + Laatste Nieuws ─────────────────────────────────── #}
-    {#
-      Drupal admin:
-        - View "Agenda" (Event) → regio "Homepage: Agenda"
-        - View "Nieuws"  (Article) → regio "Homepage: Nieuws"
-    #}
     {% if page.hp_agenda or page.hp_news %}
       {% include '@dorpshuis/organisms/agenda-news/agenda-news.twig' with {
         agenda: page.hp_agenda,
         news:   page.hp_news,
       } %}
     {% endif %}
-
-    {# ── Overige content (standaard Drupal-blokken) ──────────────────────── #}
     {% if page.content %}
-    <div class="max-w-content mx-auto px-6 py-8">
-      {{ page.content }}
-    </div>
+    <div class="max-w-content mx-auto px-6 py-8">{{ page.content }}</div>
     {% endif %}
-
   </main>
 
-  {# ── Footer ──────────────────────────────────────────────────────────────── #}
   {% include '@dorpshuis/organisms/footer/footer.twig' with {
     site_name:    site_name,
     footer_first:  page.footer_first,
@@ -97,3 +103,4 @@
   } %}
 
 </div>
+#}
