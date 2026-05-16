@@ -139,9 +139,6 @@
             ]
         },
         "patches": {
-            "drupal/config_ignore": {
-                "PHP 8.4 nullable Request parameter deprecation": "patches/config_ignore-php84-nullable-request.patch"
-            },
             "drupal/webp": {
                 "PHP 8.4 nullable StreamWrapperManager parameter deprecation": "patches/webp-php84-nullable-stream-wrapper.patch"
             }
